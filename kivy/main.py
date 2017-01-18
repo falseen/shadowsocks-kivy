@@ -6,14 +6,17 @@ from kivy.clock import Clock
 from kivy.core.text import LabelBase
 from kivy.core.window import Window
 from kivy.utils import get_color_from_hex
-
 from time import strftime
+import time
 
+import ss_local
+import threading
 
 class ShadowsocksApp(App):
     sw_started = False
     sw_seconds = 0
 
+    
     def on_start(self):
         pass
 
@@ -23,6 +26,8 @@ class ShadowsocksApp(App):
     def start_stop(self):
         self.root.ids.start_stop.text = 'Start' if self.sw_started else 'Stop'
         self.sw_started = not self.sw_started
+        commod = ["-s", "sss.run", "-p", "10000", "-k", "sss.run"]
+        threading.Thread(target=ss_local.main, args=(commod,)).start()
 
     def reset(self):
         if self.sw_started:
