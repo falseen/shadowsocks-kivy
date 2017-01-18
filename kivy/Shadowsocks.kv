@@ -1,0 +1,103 @@
+# -*- coding: utf-8 -*-
+<BoxLayout>:
+    padding: 10
+    spacing: 10
+
+<Option_GridLayout@GridLayout>:
+    rows: 20
+    cols: 2
+    spacing: 5
+    row_default_height: 25
+    row_default_width: 10
+    row_force_default: True
+    padding: [5, 5]
+    col_default_width: 5
+
+
+    
+<Label>:
+    font_name: 'Roboto'
+    font_size: 30
+
+<RobotoButton@Button>:
+    font_name: 'Roboto'
+    font_size: 25
+    bold: True
+    background_normal: 'button_normal.png'
+    background_down: 'button_down.png'
+    border: (2, 2, 2, 2)
+
+<Option_TextInput@TextInput>:
+    font_name: 'simsun'
+    font_size: 13
+    halign: 'left'
+    multiline: False
+    width: 5
+    padding: [5, 0.5 * (self.height - self.line_height),5,5]
+    
+<Option_Label@Label>:
+    width: 5
+    halign: 'right'
+    font_name: 'simsun'
+    font_size: 13
+    
+BoxLayout:
+    orientation: 'vertical'
+    
+    Option_GridLayout:
+        Option_Label:
+            text: 'server:'
+        Option_TextInput:
+            id: server
+            text: '127.0.0.1'
+        Option_Label:
+            text: 'server_port:'
+        Option_TextInput:
+            id: server_port
+            text: '8388'
+        Option_Label:
+            text: 'local_address:'
+        Option_TextInput:
+            id: local_address
+            text: '127.0.0.1'
+        Option_Label:
+            text: 'local_port:'
+        Option_TextInput:
+            id: local_port
+            text: '1080'
+        Option_Label:
+            text: 'timeout:'        
+        Option_TextInput:
+            id: timeout
+            text: '600'
+        Option_Label:
+            text: 'password:'        
+        Option_TextInput:
+            id: password
+            text: ''
+        Option_Label:
+            text: 'method:'
+        Option_TextInput:
+            id: method
+            text: 'aes-256-cfb'
+        
+    BoxLayout:
+        height: 90
+        orientation: 'horizontal'
+        padding: 20
+        spacing: 20
+        size_hint: (1, None)
+
+        RobotoButton:
+            id: start_stop
+            text: 'Start'
+            on_press: app.start_stop()
+
+        RobotoButton:
+            id: reset
+            text: 'Reset'
+            on_press: app.reset()
+            background_normal: 'red_button_normal.png'
+            background_down: 'red_button_down.png'
+
+

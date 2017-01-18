@@ -1,0 +1,10 @@
+{
+    "server":"sss.run",
+    "server_port":10000,
+    "local_port":1080,
+    "password":"sss.run",
+    "timeout":600,
+    "method":"aes-256-cfb",
+    "local_address":"127.0.0.1",
+    "fast_open":false
+}
