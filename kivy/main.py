@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-
+from __future__ import absolute_import, division, print_function, \
+    with_statement
 from kivy.app import App
 from kivy.clock import Clock
 from kivy.core.text import LabelBase
