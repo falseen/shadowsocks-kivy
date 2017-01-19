@@ -26,8 +26,7 @@ class ShadowsocksApp(App):
     def start_stop(self):
         self.root.ids.start_stop.text = 'Start' if self.sw_started else 'Stop'
         self.sw_started = not self.sw_started
-        commod = ["-s", "sss.run", "-p", "10000", "-k", "sss.run"]
-        threading.Thread(target=ss_local.main, args=(commod,)).start()
+        threading.Thread(target=ss_local.main).start()
 
     def reset(self):
         if self.sw_started:
