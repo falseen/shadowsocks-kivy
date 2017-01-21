@@ -31,7 +31,7 @@ from shadowsocks.common import to_bytes, to_str, IPNetwork
 from shadowsocks import encrypt
 
 
-VERBOSE_LEVEL_NUMBLE = 5
+VERBOSE_LEVEL = 5
 
 verbose = 0
 
@@ -299,9 +299,9 @@ def get_config(is_local):
     config['server_port'] = config.get('server_port', 8388)
 
     logging.getLogger('').handlers = []
-    logging.addLevelName(VERBOSE_LEVEL_NUMBLE, 'VERBOSE')
+    logging.addLevelName(VERBOSE_LEVEL, 'VERBOSE')
     if config['verbose'] >= 2:
-        level = VERBOSE_LEVEL_NUMBLE
+        level = VERBOSE_LEVEL
     elif config['verbose'] == 1:
         level = logging.DEBUG
     elif config['verbose'] == -1:
